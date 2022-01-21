@@ -18,7 +18,7 @@ class AuthController {
       final userRequest = User.fromJson(await request.readAsString());
 
       // Usando o repository para salvar os dados recebidos
-      _userRepository.save(userRequest);
+      await _userRepository.save(userRequest);
 
       // Se ocorrer tudo bem retorna um status 200
       return Response(200, headers: {
