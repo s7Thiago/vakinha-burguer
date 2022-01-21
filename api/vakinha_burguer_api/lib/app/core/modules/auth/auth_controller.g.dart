@@ -8,6 +8,6 @@ part of 'auth_controller.dart';
 
 Router _$AuthControllerRouter(AuthController service) {
   final router = Router();
-  router.add('GET', r'/', service.find);
+  router.add('POST', r'/register', service.register);
   return router;
 }

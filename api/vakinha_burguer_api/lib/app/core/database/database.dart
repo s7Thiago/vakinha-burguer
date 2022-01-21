@@ -4,7 +4,7 @@ import 'package:mysql1/mysql1.dart';
 class Database {
   // Abre uma conexão com o banco de dados MySQL
   Future<MySqlConnection> openConnection() async {
-    return MySqlConnection.connect(ConnectionSettings(
+    return await MySqlConnection.connect(ConnectionSettings(
       host: env['DATABASE_HOST'] ?? env['databaseHost'] ?? '',
       port: int.tryParse(env['DATABASE_PORT'] ?? env['databasePort'] ?? '') ??
           3306,
