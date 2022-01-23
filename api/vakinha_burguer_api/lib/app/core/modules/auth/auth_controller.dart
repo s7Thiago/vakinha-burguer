@@ -73,6 +73,3 @@ class AuthController {
     }
   }
 }
-
-
-// Criação da classe de modelo 33:01 aula 2

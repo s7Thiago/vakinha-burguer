@@ -4,6 +4,7 @@ import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart';
 import 'package:shelf_router/shelf_router.dart';
 import 'package:dotenv/dotenv.dart' show load;
+import 'package:vakinha_burguer_api/app/core/gerencianet/gerencianet_rest_client.dart';
 import 'package:vakinha_burguer_api/app/core/modules/auth/auth_controller.dart';
 
 // Configure routes.
@@ -17,6 +18,9 @@ void main(List<String> args) async {
   // Chamando somente assim, o considera-se que o arquivo .env está no
   // diretório raiz do projeto e se chama ".env"
   load();
+
+  // Fazendo um teste para atestar se o token é gerado e atribuído nas requests
+  // GerencianetRestClient().auth().post('/');
 
   // Configure a pipeline that logs requests.
   final _handler = Pipeline().addMiddleware(logRequests()).addHandler(_router);
